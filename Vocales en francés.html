@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocales en Francés - Guía Interactiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .vowel-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 8px solid #667eea;
+        }
+
+        .vowel-title {
+            font-size: 2.5em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .vowel-letter {
+            background: #667eea;
+            color: white;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .pronunciation-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pronunciation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .symbol {
+            font-size: 2em;
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .example-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .example-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .example-btn:active {
+            transform: scale(0.95);
+        }
+
+        .description {
+            color: #555;
+            font-size: 1.1em;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .group-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            border-left: 8px solid #e17055;
+        }
+
+        .group-title {
+            font-size: 2em;
+            color: #d63031;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .legend-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .legend-symbol {
+            font-size: 1.5em;
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .vowel-title {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Las Vocales en Francés</h1>
+        <p class="subtitle">Guía interactiva con audio para facilitar tu aprendizaje</p>
+
+        <div class="info-box">
+            <strong>💡 Cómo usar esta guía:</strong> Haz clic en cada palabra de ejemplo para escuchar su pronunciación. Puedes escucharla tantas veces como necesites.
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-symbol">[a]</div>
+                <div>Sonido A</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol">[ə]</div>
+                <div>E muda</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol">[e]</div>
+                <div>E cerrada</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol">[ɛ]</div>
+                <div>E abierta</div>
+            </div>
+        </div>
+
+        <!-- Vocal A -->
+        <div class="vowel-section">
+            <div class="vowel-title">
+                <div class="vowel-letter">A</div>
+                <span>Vocal A</span>
+            </div>
+            
+            <div class="pronunciation-card">
+                <div class="symbol">[a] largo</div>
+                <div class="description">Sonido A largo y prolongado</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('mât', 'fr')">mât</button>
+                    <button class="example-btn" onclick="speak('pâte', 'fr')">pâte</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[a] breve</div>
+                <div class="description">Sonido A corto</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('café', 'fr')">café</button>
+                    <button class="example-btn" onclick="speak('table', 'fr')">table</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocal E -->
+        <div class="vowel-section">
+            <div class="vowel-title">
+                <div class="vowel-letter">E</div>
+                <span>Vocal E (4 sonidos diferentes)</span>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[ə] E muda</div>
+                <div class="description">Al final de palabra o en medio de palabra al final de sílaba</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('Marie', 'fr')">Marie</button>
+                    <button class="example-btn" onclick="speak('Italie', 'fr')">Italie</button>
+                    <button class="example-btn" onclick="speak('samedi', 'fr')">samedi</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[ə] E débil</div>
+                <div class="description">Al final de sílaba o en palabras de una sílaba</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('devoir', 'fr')">devoir</button>
+                    <button class="example-btn" onclick="speak('mercredi', 'fr')">mercredi</button>
+                    <button class="example-btn" onclick="speak('le', 'fr')">le</button>
+                    <button class="example-btn" onclick="speak('me', 'fr')">me</button>
+                    <button class="example-btn" onclick="speak('je', 'fr')">je</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[ɛ] E abierta</div>
+                <div class="description">Dentro de una sílaba seguida de dos consonantes, o con acento grave (è) o circunflejo (ê)</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('belle', 'fr')">belle</button>
+                    <button class="example-btn" onclick="speak('exemple', 'fr')">exemple</button>
+                    <button class="example-btn" onclick="speak('père', 'fr')">père</button>
+                    <button class="example-btn" onclick="speak('même', 'fr')">même</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[e] E cerrada</div>
+                <div class="description">Al final de sílaba con acento agudo (é) o dentro de sílaba</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('écrire', 'fr')">écrire</button>
+                    <button class="example-btn" onclick="speak('pâté', 'fr')">pâté</button>
+                    <button class="example-btn" onclick="speak('nécessité', 'fr')">nécessité</button>
+                    <button class="example-btn" onclick="speak('les', 'fr')">les</button>
+                    <button class="example-btn" onclick="speak('des', 'fr')">des</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocal I -->
+        <div class="vowel-section">
+            <div class="vowel-title">
+                <div class="vowel-letter" style="font-size: 1.1em;">I/Y</div>
+                <span>Vocal I</span>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[i]</div>
+                <div class="description">Sonido I (igual con Y)</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('titre', 'fr')">titre</button>
+                    <button class="example-btn" onclick="speak('type', 'fr')">type</button>
+                    <button class="example-btn" onclick="speak('Italie', 'fr')">Italie</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocal O -->
+        <div class="vowel-section">
+            <div class="vowel-title">
+                <div class="vowel-letter">O</div>
+                <span>Vocal O</span>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[o] cerrada</div>
+                <div class="description">Sonido O cerrada</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('mot', 'fr')">mot</button>
+                    <button class="example-btn" onclick="speak('côte', 'fr')">côte</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[ɔ] abierta</div>
+                <div class="description">Sonido O abierta</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('sortir', 'fr')">sortir</button>
+                    <button class="example-btn" onclick="speak('homme', 'fr')">homme</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocal U -->
+        <div class="vowel-section">
+            <div class="vowel-title">
+                <div class="vowel-letter">U</div>
+                <span>Vocal U</span>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">[y]</div>
+                <div class="description">Sonido U francesa (labios redondeados, lengua adelante como para decir "i")</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('pur', 'fr')">pur</button>
+                    <button class="example-btn" onclick="speak('tu', 'fr')">tu</button>
+                    <button class="example-btn" onclick="speak('rue', 'fr')">rue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grupos de Vocales -->
+        <div class="group-section">
+            <div class="group-title">🎵 Grupos de Vocales</div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">AI</div>
+                <div class="description">[e] cerrada o [ɛ] abierta</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('baisser', 'fr')">baisser</button>
+                    <button class="example-btn" onclick="speak('laine', 'fr')">laine</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">AU / EAU</div>
+                <div class="description">[o] cerrada (raramente abierta)</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('taureau', 'fr')">taureau</button>
+                    <button class="example-btn" onclick="speak('augmenter', 'fr')">augmenter</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">AY</div>
+                <div class="description">[ei] o [ej]</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('paysage', 'fr')">paysage</button>
+                    <button class="example-btn" onclick="speak('payer', 'fr')">payer</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">EU / ŒU</div>
+                <div class="description">[ø] cerrada o [œ] abierta (delante de f, l, r, n)</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('feu', 'fr')">feu</button>
+                    <button class="example-btn" onclick="speak('vœu', 'fr')">vœu</button>
+                    <button class="example-btn" onclick="speak('seul', 'fr')">seul</button>
+                    <button class="example-btn" onclick="speak('cœur', 'fr')">cœur</button>
+                    <button class="example-btn" onclick="speak('veuf', 'fr')">veuf</button>
+                    <button class="example-btn" onclick="speak('jeune', 'fr')">jeune</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">EI</div>
+                <div class="description">[e] cerrada o [ɛ] abierta</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('peigner', 'fr')">peigner</button>
+                    <button class="example-btn" onclick="speak('seize', 'fr')">seize</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">EY</div>
+                <div class="description">[ej]</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('Asseyez-vous', 'fr')">Asseyez-vous</button>
+                    <button class="example-btn" onclick="speak('balayer', 'fr')">balayer</button>
+                    <button class="example-btn" onclick="speak('essayer', 'fr')">essayer</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">OI / OY</div>
+                <div class="description">[wa]</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('voiture', 'fr')">voiture</button>
+                    <button class="example-btn" onclick="speak('voyage', 'fr')">voyage</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">OU</div>
+                <div class="description">[u]</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('tout', 'fr')">tout</button>
+                    <button class="example-btn" onclick="speak('vous', 'fr')">vous</button>
+                    <button class="example-btn" onclick="speak('jour', 'fr')">jour</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-card">
+                <div class="symbol">UI / UY</div>
+                <div class="description">[ɥi]</div>
+                <div class="examples">
+                    <button class="example-btn" onclick="speak('suis', 'fr')">suis</button>
+                    <button class="example-btn" onclick="speak('essuyer', 'fr')">essuyer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box" style="background: #d4edda; border-color: #28a745; margin-top: 40px;">
+            <strong>✅ Consejos para practicar:</strong><br>
+            • Escucha cada palabra varias veces<br>
+            • Repite en voz alta después de escuchar<br>
+            • Practica todos los días 10-15 minutos<br>
+            • No te preocupes por la perfección, el progreso es lo importante<br>
+            • Graba tu voz y compárala con el audio
+        </div>
+    </div>
+
+    <script>
+        function speak(text, lang) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang;
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                
+                const voices = window.speechSynthesis.getVoices();
+                const frenchVoice = voices.find(voice => voice.lang.startsWith('fr'));
+                if (frenchVoice) {
+                    utterance.voice = frenchVoice;
+                }
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Tu navegador no soporta síntesis de voz. Intenta con Chrome, Edge o Safari.');
+            }
+        }
+
+        window.speechSynthesis.onvoiceschanged = () => {
+            window.speechSynthesis.getVoices();
+        };
+    </script>
+</body>
+</html>
